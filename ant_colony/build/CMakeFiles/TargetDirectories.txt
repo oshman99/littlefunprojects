@@ -1,0 +1,3 @@
+C:/msys64/home/ArtemK/unik_tasks/ant_colony/build/CMakeFiles/ant_optim.dir
+C:/msys64/home/ArtemK/unik_tasks/ant_colony/build/CMakeFiles/edit_cache.dir
+C:/msys64/home/ArtemK/unik_tasks/ant_colony/build/CMakeFiles/rebuild_cache.dir

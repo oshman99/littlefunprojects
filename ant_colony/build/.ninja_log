@@ -1,0 +1,14 @@
+# ninja log v5
+0	228	6559909340341980	CMakeFiles/ant_optim.dir/src/main.cpp.obj	f381a8550e024d67
+2	335	6559909831978526	CMakeFiles/ant_optim.dir/src/Graph.cpp.obj	8b6272b0b206b11b
+335	404	6559909832648723	ant_optim.exe	ebf91d02b99d693b
+1	407	6560126684053314	CMakeFiles/ant_optim.dir/src/Graph.cpp.obj	8b6272b0b206b11b
+408	490	6560126684853493	ant_optim.exe	ebf91d02b99d693b
+2	416	6560130843117777	CMakeFiles/ant_optim.dir/src/Graph.cpp.obj	8b6272b0b206b11b
+417	486	6560130843787928	ant_optim.exe	ebf91d02b99d693b
+2	512	6560192649032736	CMakeFiles/ant_optim.dir/src/Graph.cpp.obj	8b6272b0b206b11b
+512	624	6560192650132977	ant_optim.exe	ebf91d02b99d693b
+2	409	6560351316635852	CMakeFiles/ant_optim.dir/src/Graph.cpp.obj	8b6272b0b206b11b
+409	498	6560351317517752	ant_optim.exe	ebf91d02b99d693b
+2	373	6560351543193652	CMakeFiles/ant_optim.dir/src/Graph.cpp.obj	8b6272b0b206b11b
+374	435	6560351543792084	ant_optim.exe	ebf91d02b99d693b
