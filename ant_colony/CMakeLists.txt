@@ -9,6 +9,9 @@ set(ACO_SRC
 
     src/Graph.h
     src/Graph.cpp
+    
+    src/AntColony.h
+    src/AntColony.cpp
     )
 
 #Executable
