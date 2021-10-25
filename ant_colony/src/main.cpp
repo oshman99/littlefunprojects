@@ -12,7 +12,7 @@ int main() {
     graph.addEdge("G", "D", 3);
     graph.addEdge("G", "E", 3);
     graph.addEdge("D", "E", 4);
-
+    
     graph.printGraph();
 
 }

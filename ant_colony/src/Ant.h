@@ -1,5 +1,5 @@
-#ifndef ANT_COLONY_H
-#define ANT_COLONY_H
+#ifndef ANT_H
+#define ANT_H
 #include <Graph.h>
 #include <cstdlib>
 #include <unordered_map>
@@ -14,7 +14,7 @@ public:
     int numOfVisitsInCity(std::string cityName);
 
     std::string getCurrentCity(){return currentCity;}
-    void setCurrentCity(std::string cityName){currentCity = cityName;}
+    void setCurrentCity(std::string cityName){currentCity = cityName; visitedCities[cityName]++;}
 
     std::unordered_map<std::string, int> visitedCities;
     
@@ -22,13 +22,5 @@ private:
     std::string currentCity;    
 };
 
-class AntColony {
-
-public:
-
-
-private:
-    std::vector<Ant> colony;
-};
 
 #endif
