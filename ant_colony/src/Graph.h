@@ -25,7 +25,7 @@ public:
     CitiesGraph(int initPheromone): numOfVert(0), initPher(initPheromone){};
     CitiesGraph(): numOfVert(0), initPher(1){};
     
-    void addVertex(std::initializer_list<std::string&> vertNameList);
+    void addVertex(std::initializer_list<std::string> vertNameList);
     void addEdge(const std::string& vertName1, const std::string& vertName2, int dist);
 
     void removeVertex(const std::string& vertName);

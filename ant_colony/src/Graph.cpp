@@ -1,7 +1,7 @@
 #include <Graph.h>
 
 
-void CitiesGraph::addVertex(std::initializer_list<std::string&> vertNameList) {
+void CitiesGraph::addVertex(std::initializer_list<std::string> vertNameList) {
 
     for(auto vertName : vertNameList) {
 
