@@ -12,6 +12,9 @@ set(ACO_SRC
     
     src/Ant.h
     src/Ant.cpp
+
+    src/ACO.h
+    src/ACO.cpp
     )
 
 #Executable

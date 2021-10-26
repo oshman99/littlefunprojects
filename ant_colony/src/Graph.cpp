@@ -58,13 +58,13 @@ void CitiesGraph::removeEdge(const std::string& vertName1, const std::string& ve
     adjTable[vertName1].erase(vertName2);
 }
 
-void CitiesGraph::setPheromoneLevel(const std::string& vertName1, const std::string& vertName2, int newPher) {
+void CitiesGraph::setPheromoneLevel(const std::string& vertName1, const std::string& vertName2, double newPher) {
 
     adjTable[vertName1][vertName2].pheromone = newPher;
     adjTable[vertName2][vertName1].pheromone = newPher;
 }
 
-int CitiesGraph::getPheromoneLevel(const std::string& vertName1, const std::string& vertName2) {
+double CitiesGraph::getPheromoneLevel(const std::string& vertName1, const std::string& vertName2) {
     return adjTable[vertName1][vertName2].pheromone;
 }
 
@@ -77,4 +77,33 @@ void CitiesGraph::printGraph() {
         std::cout << "\n";
     }
     std::cout << std::endl;
+}
+
+std::unordered_map<std::string, road> CitiesGraph::getAdjCities(const std::string &cityName) {
+    //if city exists
+    adjacencyTableMap::iterator it = adjTable.find(cityName);
+    if(it != adjTable.end()) {
+        return it->second;
+    }
+    std::cout <<"City " << cityName << " doesn't exist! \n";
+    road empty = {0,0};
+    return std::unordered_map<std::string, road> {{"", empty}};
+}
+
+CitiesGraph::CitiesGraph(const CitiesGraph &g) {
+    adjacencyTableMap inTable = g.adjTable;
+    for(auto inVert: inTable) {
+        for(auto outVert : inVert.second) {
+            adjTable[inVert.first][outVert.first].distance = outVert.second.distance;
+            adjTable[inVert.first][outVert.first].pheromone = outVert.second.pheromone;
+        }
+    }
+}
+
+std::vector<std::string> CitiesGraph::getVecOfCities(){
+    std::vector<std::string> result;
+    result.reserve(adjTable.size());
+    for(auto city: adjTable)
+        result.push_back(city.first);
+    return result;
 }

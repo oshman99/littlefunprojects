@@ -8,18 +8,21 @@
 class Ant {
 
 public:
+    Ant(int visitsMax=3):maxVisits(visitsMax){}
     void goToCity(std::string cityName);
-
-    bool isCityVisited();
-    int numOfVisitsInCity(std::string cityName);
-
+    bool isCityVisited(const std::string &cityName);
+    int numOfVisitsInCity(const std::string &cityName);
     std::string getCurrentCity(){return currentCity;}
-    void setCurrentCity(std::string cityName){currentCity = cityName; visitedCities[cityName]++;}
 
-    std::unordered_map<std::string, int> visitedCities;
+    std::vector<std::string> path;
+    int dist;
+    int maxVisits;
     
 private:
+    std::unordered_map<std::string, int> visitedCities; 
     std::string currentCity;    
+    
+    
 };
 
 
