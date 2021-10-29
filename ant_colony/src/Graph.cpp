@@ -79,7 +79,7 @@ void CitiesGraph::printGraph() {
     std::cout << std::endl;
 }
 
-std::unordered_map<std::string, road> CitiesGraph::getAdjCities(const std::string &cityName) {
+std::unordered_map<std::string, road> CitiesGraph::getAdjCities(const std::string& cityName) {
     //if city exists
     adjacencyTableMap::iterator it = adjTable.find(cityName);
     if(it != adjTable.end()) {
@@ -90,10 +90,11 @@ std::unordered_map<std::string, road> CitiesGraph::getAdjCities(const std::strin
     return std::unordered_map<std::string, road> {{"", empty}};
 }
 
-CitiesGraph::CitiesGraph(const CitiesGraph &g) {
-    adjacencyTableMap inTable = g.adjTable;
-    for(auto inVert: inTable) {
+CitiesGraph::CitiesGraph(const CitiesGraph& g) {
+    for(auto inVert: g.adjTable) {
         for(auto outVert : inVert.second) {
+            adjTable[inVert.first];
+            adjTable[inVert.first][outVert.first];
             adjTable[inVert.first][outVert.first].distance = outVert.second.distance;
             adjTable[inVert.first][outVert.first].pheromone = outVert.second.pheromone;
         }
@@ -106,4 +107,8 @@ std::vector<std::string> CitiesGraph::getVecOfCities(){
     for(auto city: adjTable)
         result.push_back(city.first);
     return result;
+}
+
+road CitiesGraph::operator()(std::string fromCity, std::string toCity) {
+    return adjTable[fromCity][toCity];
 }

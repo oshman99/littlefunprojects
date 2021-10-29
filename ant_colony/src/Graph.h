@@ -27,8 +27,10 @@ public:
     CitiesGraph(int initPheromone): numOfVert(0), initPher(initPheromone){};
     CitiesGraph(): numOfVert(0), initPher(1.0){};
     //copy constructor
-    CitiesGraph(const CitiesGraph &g);
+    CitiesGraph(const CitiesGraph& g);
     
+    road operator()(std::string fromCity, std::string toCity);
+
     void addVertex(std::initializer_list<std::string> vertNameList);
     void addEdge(const std::string& vertName1, const std::string& vertName2, int dist);
 
@@ -38,7 +40,7 @@ public:
     void setPheromoneLevel(const std::string& vertName1, const std::string& vertName2, double newPher);
     double getPheromoneLevel(const std::string& vertName1, const std::string& vertName2);
 
-    std::unordered_map<std::string, road> getAdjCities(const std::string &cityName);
+    std::unordered_map<std::string, road> getAdjCities(const std::string& cityName);
 
     std::vector<std::string> getVecOfCities();
 

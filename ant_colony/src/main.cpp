@@ -7,10 +7,6 @@
 #include <ACO.h>
 
 
-std::vector<std::string> getShortestPathAndDistanceACO(int colonySize, const std::string &city1, const std::string &city2, CitiesGraph &graph);
-double generateProb();
-double calcNewPheromone(double oldPheromone, double alpha, double beta, double rho, int dist);
-
 
 int main() {
     CitiesGraph graph;
@@ -25,22 +21,11 @@ int main() {
     graph.addEdge("G", "E", 3);
     graph.addEdge("D", "E", 4);
 
-    std::cout << graph.getPheromoneLevel("A", "B") << " A-B pher \n";
-
-    graph.setPheromoneLevel("A", "B", 0.2);
-
-    std::cout << graph.getPheromoneLevel("A", "B") << " A-B new pher \n";
-    graph.printGraph();
+    ACO solver(graph, "B", "V", 1);
+    std::cout << solver.colony[0].getCurrentCity() << "\n";
+    solver.calcAntSolution();
+    std::cout << solver.colony[0].getCurrentCity()<< "\n";
 
 }
 
-std::vector<std::string> getShortestPathAndDistanceACO(int colonySize, const std::string &city1, const std::string &city2, CitiesGraph &graph) {
-    std::vector<Ant> colony(colonySize);
-    while(true) {
-        for(Ant itAnt: colony) {
-
-        }
-    }
-
-}
 
